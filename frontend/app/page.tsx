@@ -327,7 +327,7 @@ export default function Home() {
             <Toolbar sx={{ justifyContent: "space-between" }}>
               {/* Your name/logo */}
               <Typography variant="h6" fontWeight="bold" color="text.primary">
-                <Box component="span" sx={{ color: theme.palette.primary.main }}>John</Box>Doe
+                <Box component="span" sx={{ color: theme.palette.primary.main }}>Nick</Box>McCoy
               </Typography>
               
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -376,7 +376,7 @@ export default function Home() {
                 }}>
                   {/* GitHub link */}
                   <IconButton 
-                    href="https://github.com/johndoe" 
+                    href="https://github.com/P1X3L-25" 
                     target="_blank"
                     rel="noopener noreferrer"
                     color="inherit"
@@ -395,7 +395,7 @@ export default function Home() {
                   
                   {/* LinkedIn link */}
                   <IconButton 
-                    href="https://linkedin.com/in/johndoe" 
+                    href="https://linkedin.com/in/nick-mccoy-aa381b38b/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     color="inherit"
@@ -473,7 +473,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m John Doe
+                  Hi, I&apos;m Nick McCoy
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -940,7 +940,7 @@ export default function Home() {
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {/* Email link */}
                   <Link 
-                    href="mailto:john.doe@example.com" 
+                    href="mailto:nickmccoy_15@outlook.com" 
                     color="inherit"
                     underline="none"
                     sx={{ 
@@ -954,13 +954,13 @@ export default function Home() {
                     }}
                   >
                     <HiOutlineMail style={{ marginRight: '0.5rem' }} />
-                    john.doe@example.com
+                    nickmccoy_15@outlook.com
                   </Link>
                   
                   {/* Social media links */}
                   <Box sx={{ display: 'flex', gap: 2 }}>
                     <IconButton 
-                      href="https://github.com/johndoe" 
+                      href="https://github.com/P1X3L-25" 
                       target="_blank"
                       rel="noopener noreferrer"
                       color="inherit"
@@ -976,7 +976,7 @@ export default function Home() {
                       <FaGithub />
                     </IconButton>
                     <IconButton 
-                      href="https://linkedin.com/in/johndoe" 
+                      href="https://linkedin.com/in/nick-mccoy-aa381b38b/" 
                       target="_blank"
                       rel="noopener noreferrer"
                       color="inherit"
@@ -1114,7 +1114,7 @@ export default function Home() {
               }}
             >
               <Typography variant="body2" color="text.secondary">
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+                &copy; {new Date().getFullYear()} Nick McCoy. All rights reserved.
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: { xs: 2, md: 0 } }}>
                 Designed & Built with ❤️ using React & Material UI
