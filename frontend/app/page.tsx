@@ -473,7 +473,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m John Doe
+                  Hi, I&apos;m David Weber
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -550,6 +550,24 @@ export default function Home() {
                 >
                   {/* You can put a picture of yourself here, or keep it empty/remove the circle.  */}
                 </Box>
+                <Box
+  sx={{
+    width: 160,
+    height: 160,
+    borderRadius: '50%',
+    overflow: 'hidden',
+    mx: 'auto',
+    mb: 3,
+    border: '4px solid white',
+  }}
+>
+  {/* Your picture goes right here */}
+  <img 
+    src="/path/to/DAVID_Comp.png"
+    alt="Your Name"
+    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+  />
+</Box>
               </MuiGrid>
             </MuiGrid>
           </Container>
@@ -1114,7 +1132,7 @@ export default function Home() {
               }}
             >
               <Typography variant="body2" color="text.secondary">
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+                &copy; {new Date().getFullYear()} David Weber. All rights reserved.
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: { xs: 2, md: 0 } }}>
                 Designed & Built with ❤️ using React & Material UI
