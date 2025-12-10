@@ -958,7 +958,7 @@ export default function Home() {
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {/* Email link */}
                   <Link 
-                    href="mailto:john.doe@example.com" 
+                    href="mailto:dcweber@mail.mccneb.edu" 
                     color="inherit"
                     underline="none"
                     sx={{ 
@@ -972,7 +972,7 @@ export default function Home() {
                     }}
                   >
                     <HiOutlineMail style={{ marginRight: '0.5rem' }} />
-                    john.doe@example.com
+                    dcweber@mail.mccneb.edu
                   </Link>
                   
                   {/* Social media links */}
