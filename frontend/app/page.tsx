@@ -327,7 +327,7 @@ export default function Home() {
             <Toolbar sx={{ justifyContent: "space-between" }}>
               {/* Your name/logo */}
               <Typography variant="h6" fontWeight="bold" color="text.primary">
-                <Box component="span" sx={{ color: theme.palette.primary.main }}>John</Box>Doe
+                <Box component="span" sx={{ color: theme.palette.primary.main }}>Roberto</Box>Arevalo
               </Typography>
               
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -395,7 +395,7 @@ export default function Home() {
                   
                   {/* LinkedIn link */}
                   <IconButton 
-                    href="https://linkedin.com/in/johndoe" 
+                    href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" 
                     target="_blank"
                     rel="noopener noreferrer"
                     color="inherit"
@@ -941,7 +941,7 @@ export default function Home() {
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {/* Email link */}
                   <Link 
-                    href="mailto:john.doe@example.com" 
+                    href="mailto:rarevalo-soriano@mail.mccneb.edu" 
                     color="inherit"
                     underline="none"
                     sx={{ 
@@ -955,7 +955,7 @@ export default function Home() {
                     }}
                   >
                     <HiOutlineMail style={{ marginRight: '0.5rem' }} />
-                    john.doe@example.com
+                    rarevalo-soriano@mail.mccneb.edu
                   </Link>
                   
                   {/* Social media links */}
@@ -977,7 +977,7 @@ export default function Home() {
                       <FaGithub />
                     </IconButton>
                     <IconButton 
-                      href="https://linkedin.com/in/johndoe" 
+                      href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" 
                       target="_blank"
                       rel="noopener noreferrer"
                       color="inherit"
@@ -1115,7 +1115,7 @@ export default function Home() {
               }}
             >
               <Typography variant="body2" color="text.secondary">
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+                &copy; {new Date().getFullYear()} Roberto Arevalo. All rights reserved.
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: { xs: 2, md: 0 } }}>
                 Designed & Built with ❤️ using React & Material UI
