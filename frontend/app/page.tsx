@@ -473,7 +473,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Alex Shaw
+                  Hi, I&apos;m Moises Escobar
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -522,6 +522,9 @@ export default function Home() {
                     View Work
                   </Button>
                 </Box>
+                <Box sx={{ mt: 2 }}>
+                  <a href="#about">Go to About Me</a>
+                </Box>
               </MuiGrid>
               {/* Right side - Profile image */}
               <MuiGrid sx={{ textAlign: "center" }}>
@@ -554,6 +557,15 @@ export default function Home() {
             </MuiGrid>
           </Container>
         </Box>
+
+        <section id="about" style={{ marginTop: "2rem" }}>
+          <h2>About Me</h2>
+          <p>
+            Hi, I'm Moises. This portfolio represents who I am, my interests,
+            and my creative work. This About Me section is a planned upgrade
+            to my personal website.
+          </p>
+        </section>
 
         {/* ===== ABOUT SECTION ===== */}
         <Box 
