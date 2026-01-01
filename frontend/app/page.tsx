@@ -522,7 +522,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Roberto Arevalo
+                  Hi, I&apos;m Roberto Arevalo 
             
                   {/* Job title with gradient effect */}
                   <Typography
