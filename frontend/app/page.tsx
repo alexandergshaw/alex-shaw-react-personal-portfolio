@@ -25,6 +25,7 @@ import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa"; // Social me
 import { HiOutlineMail } from "react-icons/hi"; // Email icon
 import { IoMoon, IoSunny } from "react-icons/io5"; // Theme toggle icons
 import Image from "next/image"; // Next.js optimized Image component
+import WorkoutForm from "./WorkoutForm"; // Workout form component
 import {
   AppBar, // Top navigation bar
   Box, // Basic layout container
@@ -327,7 +328,7 @@ export default function Home() {
             <Toolbar sx={{ justifyContent: "space-between" }}>
               {/* Your name/logo */}
               <Typography variant="h6" fontWeight="bold" color="text.primary">
-                <Box component="span" sx={{ color: theme.palette.primary.main }}>John</Box>Doe
+                <Box component="span" sx={{ color: theme.palette.primary.main }}>Cindy</Box>Wendel
               </Typography>
               
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -473,7 +474,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Alex Shaw
+                  Hi, I&apos;m Cindy Wendel
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -1092,6 +1093,20 @@ export default function Home() {
               </MuiGrid>
             </MuiGrid>
           </Container>
+        </Box>
+
+        {/* ===== WORKOUT FORM SECTION ===== */}
+        <Box 
+          component="section" 
+          id="workout" 
+          sx={{ 
+            py: 12, 
+            bgcolor: darkMode ? '#0a1929' : '#f8fafc',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <WorkoutForm />
         </Box>
 
         {/* ===== FOOTER ===== */}
