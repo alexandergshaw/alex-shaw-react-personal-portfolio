@@ -25,6 +25,7 @@ import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa"; // Social me
 import { HiOutlineMail } from "react-icons/hi"; // Email icon
 import { IoMoon, IoSunny } from "react-icons/io5"; // Theme toggle icons
 import Image from "next/image"; // Next.js optimized Image component
+import WorkoutForm from "./WorkoutForm"; // Workout form component
 import {
   AppBar, // Top navigation bar
   Box, // Basic layout container
@@ -1092,6 +1093,20 @@ export default function Home() {
               </MuiGrid>
             </MuiGrid>
           </Container>
+        </Box>
+
+        {/* ===== WORKOUT FORM SECTION ===== */}
+        <Box 
+          component="section" 
+          id="workout" 
+          sx={{ 
+            py: 12, 
+            bgcolor: darkMode ? '#0a1929' : '#f8fafc',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <WorkoutForm />
         </Box>
 
         {/* ===== FOOTER ===== */}
