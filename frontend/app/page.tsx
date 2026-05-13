@@ -24,13 +24,11 @@ import { useState, useEffect } from "react"; // For state management and side ef
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa"; // Social media icons
 import { HiOutlineMail } from "react-icons/hi"; // Email icon
 import { IoMoon, IoSunny } from "react-icons/io5"; // Theme toggle icons
-import Image from "next/image"; // Next.js optimized Image component
 import {
   AppBar, // Top navigation bar
   Box, // Basic layout container
   Button, // Clickable buttons
   Card, // Card components for projects
-  CardActions, // Bottom section of cards for buttons
   CardContent, // Main content area of cards
   Container, // Centered, width-limited container
   createTheme, // Function to create a theme
@@ -53,11 +51,49 @@ export default function Home() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   // State to track if dark mode is active
   const [darkMode, setDarkMode] = useState(true);
+  // State for Genderize.io input and result
+  const [genderName, setGenderName] = useState('');
+  const [genderResult, setGenderResult] = useState<string | null>(null);
+  const [genderError, setGenderError] = useState<string | null>(null);
+  const [isGenderLoading, setIsGenderLoading] = useState(false);
 
   // Update dark mode when system preference changes
   useEffect(() => {
     setDarkMode(prefersDarkMode);
   }, [prefersDarkMode]);
+
+  const handleGenderCheck = async () => {
+    setGenderResult(null);
+    setGenderError(null);
+
+    const trimmedName = genderName.trim();
+    if (!trimmedName) {
+      setGenderError('Please enter a name.');
+      return;
+    }
+
+    setIsGenderLoading(true);
+    try {
+      const response = await fetch(`https://api.genderize.io?name=${encodeURIComponent(trimmedName)}`);
+      if (!response.ok) {
+        throw new Error('Genderize request failed');
+      }
+
+      const data = await response.json();
+      if (data?.gender) {
+        const confidence = data.probability ? `${Math.round(data.probability * 100)}%` : 'unknown confidence';
+        setGenderResult(`Your name, "${data.name}" is probably ${data.gender} with a ${confidence} chance.`);
+      } else if (data?.name) {
+        setGenderResult(`Your name "${data.name}" unfortunately did not return a gender prediction.`);
+      } else {
+        setGenderError('No result returned from Genderize.');
+      }
+    } catch (error) {
+      setGenderError('Unable to determine gender. Please try again.');
+    } finally {
+      setIsGenderLoading(false);
+    }
+  };
 
   // Create a theme based on dark/light mode preference
   const theme = createTheme({
@@ -260,28 +296,22 @@ export default function Home() {
   // Sample project data - replace with your own
   const projectsData = [
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration that handles 10,000+ monthly transactions.",
+      title: "Heroes of Skaihavel",
+      description: "A RPG set in the skies where four Angels journey to recover their stolen power, defeat the demons and corrupt angels, and save the skies!",
       image: "/project1.jpg",
-      technologies: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/johndoe/ecommerce",
-      demo: "https://ecommerce-demo.example.com"
+      genres: ["RPG", "Single-Player", "Local Co-op"],
     },
     {
-      title: "SaaS Analytics Dashboard",
-      description: "An analytics dashboard for SaaS businesses with real-time data visualization and custom reporting features.",
+      title: "MeleeMages",
+      description: "A MMORPG set in a world where magic is done through hand puppets, and melee combat sits alongside it. Gather puppets and melees, fight beasts and other players, and challenge the High Priests to prove your strengh as the best MeleeMage around!",
       image: "/project2.jpg",
-      technologies: ["Next.js", "TypeScript", "D3.js"],
-      github: "https://github.com/johndoe/saas-dashboard",
-      demo: "https://saas-dashboard.example.com"
+      genres: ["Massively Multiplayer", "RPG", "Adventure"],
     },
     {
-      title: "AI Chat Application",
-      description: "A real-time chat application with AI-powered responses and language translation supporting 20+ languages.",
+      title: "Soulclash Scramble",
+      description: "A 3D Platform Fighter where you and up to three friends can throw hands as one of many original characters.",
       image: "/project3.jpg",
-      technologies: ["React", "Socket.io", "OpenAI API"],
-      github: "https://github.com/johndoe/ai-chat",
-      demo: "https://ai-chat.example.com"
+      genres: ["3D Fighter", "Single-Player", "Local PvP", "Online PvP"],
     },
   ];
 
@@ -473,7 +503,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Alex Shaw
+                  Hi, I&apos;m Lorenzell Phillips
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -497,8 +527,7 @@ export default function Home() {
                   color="text.secondary" 
                   sx={{ fontSize: '1.1rem', mt: 3, mb: 4 }}
                 >
-                  I create sophisticated web applications that deliver exceptional
-                  user experiences with modern technologies and clean code.
+                  I create amazing games that deliver hours on hours of joy.
                 </Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
                   <Button
@@ -655,7 +684,7 @@ export default function Home() {
           <Container maxWidth="md" sx={styles.sectionContainer}>
             {/* Section title */}
             <Typography variant="h3" component="h2" sx={styles.sectionTitle}>
-              Featured Projects
+              Future Projects
             </Typography>
             <Divider sx={styles.divider} />
             
@@ -663,7 +692,7 @@ export default function Home() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
               {projectsData.map((project, index) => (
                 <Card key={index} sx={styles.projectCard} elevation={darkMode ? 1 : 2}>
-                  {/* Card content - title, description, technologies */}
+                  {/* Card content - title, description, genres */}
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography variant="h5" component="h3" fontWeight="bold" gutterBottom>
                       {project.title}
@@ -672,11 +701,14 @@ export default function Home() {
                       {project.description}
                     </Typography>
                     
-                    {/* Technology tags */}
+                    {/* Genres tags */}
+                    <Typography variant="subtitle2" fontWeight={600} color="text.primary" sx={{ mb: 1 }}>
+                      Genres
+                    </Typography>
                     <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 2 }}>
-                      {project.technologies.map((tech, techIndex) => (
+                      {project.genres.map((genre, genreIndex) => (
                         <Box
-                          key={techIndex}
+                          key={genreIndex}
                           component="span"
                           sx={{
                             px: 1.5,
@@ -688,33 +720,11 @@ export default function Home() {
                             fontWeight: 600,
                           }}
                         >
-                          {tech}
+                          {genre}
                         </Box>
                       ))}
                     </Box>
                   </CardContent>
-                  
-                  {/* Card actions - buttons for code and demo */}
-                  <CardActions sx={{ p: 2, pt: 0 }}>
-                    <Button 
-                      size="small" 
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      startIcon={<FaGithub />}
-                    >
-                      Code
-                    </Button>
-                    <Button 
-                      size="small" 
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      color="primary"
-                    >
-                      Live Demo
-                    </Button>
-                  </CardActions>
                 </Card>
               ))}
             </Box>
@@ -940,7 +950,7 @@ export default function Home() {
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                   {/* Email link */}
                   <Link 
-                    href="mailto:john.doe@example.com" 
+                    href="mailto:lorenzellphillips@gmail.com" 
                     color="inherit"
                     underline="none"
                     sx={{ 
@@ -954,7 +964,7 @@ export default function Home() {
                     }}
                   >
                     <HiOutlineMail style={{ marginRight: '0.5rem' }} />
-                    john.doe@example.com
+                    lorenzellphillips@gmail.com
                   </Link>
                   
                   {/* Social media links */}
@@ -1091,6 +1101,80 @@ export default function Home() {
                 </Paper>
               </MuiGrid>
             </MuiGrid>
+          </Container>
+        </Box>
+
+        {/* ===== GENDERIZE SECTION ===== */}
+        <Box
+          component="section"
+          sx={{
+            py: 10,
+            bgcolor: darkMode ? '#081525' : '#eef2ff',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <Container maxWidth="md" sx={styles.sectionContainer}>
+            <Typography variant="h4" component="h2" sx={styles.sectionTitle}>
+              Predict Your Gender Based on Your Name
+            </Typography>
+            <Divider sx={styles.divider} />
+            <Paper
+              elevation={darkMode ? 1 : 3}
+              sx={{
+                p: 4,
+                borderRadius: 4,
+                background: darkMode ? 'rgba(19, 47, 76, 0.55)' : 'rgba(255, 255, 255, 0.95)',
+                backdropFilter: 'blur(10px)',
+                border: darkMode ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(0, 0, 0, 0.08)',
+              }}
+            >
+              <Typography variant="body1" paragraph sx={{ mb: 3 }}>
+                Enter your first name, press confirm, and I will fetch the most likely gender from Genderize.io.
+              </Typography>
+
+              <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, alignItems: 'stretch' }}>
+                <TextField
+                  fullWidth
+                  label="First Name"
+                  variant="outlined"
+                  value={genderName}
+                  onChange={(event) => setGenderName(event.target.value)}
+                  placeholder="e.g. Alex"
+                  InputProps={{
+                    sx: {
+                      borderRadius: 2,
+                    },
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleGenderCheck}
+                  disabled={isGenderLoading}
+                  sx={{
+                    py: 1.75,
+                    px: 4,
+                    borderRadius: 2,
+                    minWidth: 160,
+                    background: 'linear-gradient(to right, #3a86ff, #5e60ce)',
+                  }}
+                >
+                  {isGenderLoading ? 'Confirming...' : 'Confirm'}
+                </Button>
+              </Box>
+
+              {genderResult && (
+                <Typography variant="body1" sx={{ mt: 3, color: theme.palette.success.main }}>
+                  {genderResult}
+                </Typography>
+              )}
+              {genderError && (
+                <Typography variant="body1" sx={{ mt: 3, color: theme.palette.error.main }}>
+                  {genderError}
+                </Typography>
+              )}
+            </Paper>
           </Container>
         </Box>
 
