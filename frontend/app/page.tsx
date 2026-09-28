@@ -577,7 +577,7 @@ export default function Home() {
             >
               About Me
             </Typography>
-            <Divider sx={styles.divider} />
+            <Divider sx={{ ...styles.divider, backgroundColor: '#ffff00' }} />
             
             {/* About content - using Paper component for card effect */}
             <Paper 
