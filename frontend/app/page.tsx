@@ -606,10 +606,7 @@ export default function Home() {
                 paragraph
                 sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}
               >
-                Previously, I worked at XYZ Technologies where I led the frontend development team,
-                improving application performance by 40% and implementing CI/CD pipelines that reduced
-                deployment time by 65%. I&apos;m passionate about sharing knowledge and have contributed to
-                several open-source projects.
+               I am currently taking an Agile class and am working on an assignment
               </Typography>
               
               {/* Resume download button */}
