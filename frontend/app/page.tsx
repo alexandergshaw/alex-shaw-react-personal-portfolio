@@ -327,7 +327,7 @@ export default function Home() {
             <Toolbar sx={{ justifyContent: "space-between" }}>
               {/* Your name/logo */}
               <Typography variant="h6" fontWeight="bold" color="text.primary">
-                <Box component="span" sx={{ color: theme.palette.primary.main }}>John</Box>Doe
+                <Box component="span" sx={{ color: theme.palette.primary.main }}>Lapan</Box>Sieba
               </Typography>
               
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -473,7 +473,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Alex Shaw
+                  Hi, I&apos;m Lapan Sieba
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -497,8 +497,8 @@ export default function Home() {
                   color="text.secondary" 
                   sx={{ fontSize: '1.1rem', mt: 3, mb: 4 }}
                 >
-                  I create sophisticated web applications that deliver exceptional
-                  user experiences with modern technologies and clean code.
+                  I build web applications and software solutions using modern technologies 
+                  while continuously expanding my skills in full stack development.
                 </Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
                   <Button
@@ -598,20 +598,19 @@ export default function Home() {
                 paragraph 
                 sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}
               >
-                With over 5 years of experience in web development, I specialize in creating
-                high-performance, responsive web applications using React, Next.js, and Node.js. My
-                approach combines technical expertise with a strong focus on user experience and clean,
-                maintainable code.
+                I am an Information Technology student at Metropolitan Community College, studying
+                programming and software development. I have experience learning Java, HTML, and CSS,
+                and I am continuing to develop my full stack development skills.
               </Typography>
               <Typography 
                 variant="body1" 
                 paragraph
                 sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}
               >
-                Previously, I worked at XYZ Technologies where I led the frontend development team,
-                improving application performance by 40% and implementing CI/CD pipelines that reduced
-                deployment time by 65%. I&apos;m passionate about sharing knowledge and have contributed to
-                several open-source projects.
+                I am also the founder of XdelNow, a delivery platform startup that I am currently
+                developing. XdelNow is designed to connect customers with local restaurants and stores
+                for ordering and delivery services. My goal is to launch the platform in Omaha,
+                Nebraska, and expand to other markets in the future.
               </Typography>
               
               {/* Resume download button */}
@@ -1114,7 +1113,7 @@ export default function Home() {
               }}
             >
               <Typography variant="body2" color="text.secondary">
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+                &copy; {new Date().getFullYear()} Lapan Sieba. All rights reserved.
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: { xs: 2, md: 0 } }}>
                 Designed & Built with ❤️ using React & Material UI
