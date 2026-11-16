@@ -259,31 +259,35 @@ export default function Home() {
 
   // Sample project data - replace with your own
   const projectsData = [
-    {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration that handles 10,000+ monthly transactions.",
-      image: "/project1.jpg",
-      technologies: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/johndoe/ecommerce",
-      demo: "https://ecommerce-demo.example.com"
-    },
-    {
-      title: "SaaS Analytics Dashboard",
-      description: "An analytics dashboard for SaaS businesses with real-time data visualization and custom reporting features.",
-      image: "/project2.jpg",
-      technologies: ["Next.js", "TypeScript", "D3.js"],
-      github: "https://github.com/johndoe/saas-dashboard",
-      demo: "https://saas-dashboard.example.com"
-    },
-    {
-      title: "AI Chat Application",
-      description: "A real-time chat application with AI-powered responses and language translation supporting 20+ languages.",
-      image: "/project3.jpg",
-      technologies: ["React", "Socket.io", "OpenAI API"],
-      github: "https://github.com/johndoe/ai-chat",
-      demo: "https://ai-chat.example.com"
-    },
-  ];
+  {
+    title: "Retail Store System",
+    description:
+      "A Java application that manages store inventory, processes sales, and tracks customer rewards.",
+    image: "/project1.jpg",
+    technologies: ["Java"],
+    github: "",
+    demo: "",
+  },
+  {
+    title: "Restaurant Bill Calculator",
+    description:
+      "A Java program that calculates a restaurant bill, including tax, tip, and the total amount.",
+    image: "/project2.jpg",
+    technologies: ["Java"],
+    github: "",
+    demo: "",
+  },
+  {
+    title: "Change Calculator",
+    description:
+      "A Java program that calculates the number of dollars and coins needed to return change to a customer.",
+    image: "/project3.jpg",
+    technologies: ["Java"],
+    github: "",
+    demo: "",
+  },
+];
+
 
   // Frontend skills with proficiency levels
   const frontendSkills = [
@@ -327,7 +331,7 @@ export default function Home() {
             <Toolbar sx={{ justifyContent: "space-between" }}>
               {/* Your name/logo */}
               <Typography variant="h6" fontWeight="bold" color="text.primary">
-                <Box component="span" sx={{ color: theme.palette.primary.main }}>John</Box>Doe
+                <Box component="span" sx={{ color: theme.palette.primary.main }}>Lapan</Box>Sieba
               </Typography>
               
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -473,7 +477,7 @@ export default function Home() {
                     lineHeight: 1.2,
                   }}
                 >
-                  Hi, I&apos;m Alex Shaw
+                  Hi, I&apos;m Lapan Sieba
                   {/* Job title with gradient effect */}
                   <Typography
                     variant="h2"
@@ -497,8 +501,9 @@ export default function Home() {
                   color="text.secondary" 
                   sx={{ fontSize: '1.1rem', mt: 3, mb: 4 }}
                 >
-                  I create sophisticated web applications that deliver exceptional
-                  user experiences with modern technologies and clean code.
+                  
+ I am an IT student at Metropolitan Community College learning software development.
+ I build web applications and continue improving my full stack development skills.
                 </Typography>
                 <Box sx={{ display: "flex", gap: 2, mt: 3 }}>
                   <Button
@@ -598,20 +603,19 @@ export default function Home() {
                 paragraph 
                 sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}
               >
-                With over 5 years of experience in web development, I specialize in creating
-                high-performance, responsive web applications using React, Next.js, and Node.js. My
-                approach combines technical expertise with a strong focus on user experience and clean,
-                maintainable code.
+                I am an Information Technology student at Metropolitan Community College, studying
+                programming and software development. I have experience learning Java, HTML, and CSS,
+                and I am continuing to develop my full stack development skills.
               </Typography>
               <Typography 
                 variant="body1" 
                 paragraph
                 sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}
               >
-                Previously, I worked at XYZ Technologies where I led the frontend development team,
-                improving application performance by 40% and implementing CI/CD pipelines that reduced
-                deployment time by 65%. I&apos;m passionate about sharing knowledge and have contributed to
-                several open-source projects.
+                I am also the founder of XdelNow, a delivery platform startup that I am currently
+                developing. XdelNow is designed to connect customers with local restaurants and stores
+                for ordering and delivery services. My goal is to launch the platform in Omaha,
+                Nebraska, and expand to other markets in the future.
               </Typography>
               
               {/* Resume download button */}
@@ -1114,7 +1118,7 @@ export default function Home() {
               }}
             >
               <Typography variant="body2" color="text.secondary">
-                &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+                &copy; {new Date().getFullYear()} Lapan Sieba. All rights reserved.
               </Typography>
               <Typography variant="body2" color="text.secondary" sx={{ mt: { xs: 2, md: 0 } }}>
                 Designed & Built with ❤️ using React & Material UI
